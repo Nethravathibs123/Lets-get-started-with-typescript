@@ -5,7 +5,15 @@ const buttonElement=document.querySelector('button') !;
 const numResults: Array<number> =[];
 const textResults: string[] =[];
 //function add(num1:any , num2:any) {
-function add(num1: number |string, num2:  number |string) {
+
+type NumOrString=number |string;
+type Result={val:number; timestamp: Date};
+
+interface ResultObj {
+  val: number;
+  timestamp: Date;
+}
+function add(num1: NumOrString, num2:  NumOrString) {
   if(typeof num1==='number' && typeof num2 === 'number'){
     return num1+num2;
   }
